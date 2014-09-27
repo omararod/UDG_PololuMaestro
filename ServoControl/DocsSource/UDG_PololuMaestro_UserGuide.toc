@@ -1,0 +1,40 @@
+\contentsline {chapter}{\numberline {1}Introduction}{5}
+\contentsline {chapter}{\numberline {2}Setup}{7}
+\contentsline {section}{\numberline {2.1}Preparing your environment}{7}
+\contentsline {section}{\numberline {2.2}Building with UDG\_PololuMaestro}{8}
+\contentsline {subsection}{\numberline {2.2.1}Windows}{8}
+\contentsline {subsection}{\numberline {2.2.2}Linux (Ubuntu)}{9}
+\contentsline {chapter}{\numberline {3}The UDG\_PololuMaestro API}{11}
+\contentsline {section}{\numberline {3.1}PololuMaestro class}{11}
+\contentsline {subsection}{\numberline {3.1.1}public members}{11}
+\contentsline {subsubsection}{\numberline {3.1.1.1}PololuMaestro(HANDLE fd)}{11}
+\contentsline {subsubsection}{\numberline {3.1.1.2}PololuMaestro(HANDLE fd,int nchannels)}{13}
+\contentsline {subsubsection}{\numberline {3.1.1.3}\nobreakspace {}PololuMaestro()}{13}
+\contentsline {subsubsection}{\numberline {3.1.1.4} bool SetAngle(int channel, float angle)}{13}
+\contentsline {subsubsection}{\numberline {3.1.1.5}float GetAngle(int channel)}{13}
+\contentsline {subsubsection}{\numberline {3.1.1.6}bool SetTarget(int channel,unsigned short targetUs)}{13}
+\contentsline {subsubsection}{\numberline {3.1.1.7}bool SetSpeed(int channel,unsigned short speed)}{14}
+\contentsline {subsubsection}{\numberline {3.1.1.8}bool SetAcceleration(int channel,unsigned short acceleration)}{14}
+\contentsline {subsubsection}{\numberline {3.1.1.9}unsigned short GetPosition(int channel)}{14}
+\contentsline {subsubsection}{\numberline {3.1.1.10}bool AssignChannel(int channel, ServoMotor motor)}{14}
+\contentsline {subsubsection}{\numberline {3.1.1.11}bool IsMoving()}{15}
+\contentsline {subsection}{\numberline {3.1.2}Private members}{15}
+\contentsline {subsubsection}{\numberline {3.1.2.1}HANDLE deviceDescriptor}{15}
+\contentsline {subsection}{\numberline {3.1.3} ServoMotor* channels}{15}
+\contentsline {subsubsection}{\numberline {3.1.3.1}int numberOfChannels}{15}
+\contentsline {subsubsection}{\numberline {3.1.3.2}bool WriteToDevice(unsigned char* buffer, int nBytes)}{15}
+\contentsline {subsubsection}{\numberline {3.1.3.3}bool ReadFromDevice(unsigned char* buffer, int nBytes)}{15}
+\contentsline {section}{\numberline {3.2}ServoMotor class}{15}
+\contentsline {subsection}{\numberline {3.2.1}int minPulse}{15}
+\contentsline {subsection}{\numberline {3.2.2}int maxPulse}{16}
+\contentsline {subsection}{\numberline {3.2.3}int neutralPulse}{16}
+\contentsline {subsection}{\numberline {3.2.4}int degreeRange}{16}
+\contentsline {subsection}{\numberline {3.2.5}int AngleToPulse(float angle)}{16}
+\contentsline {subsection}{\numberline {3.2.6}void SetParameters(int \_minPulse, int \_maxPulse, int \_neutralPulse, int \_degreeRange)}{16}
+\contentsline {chapter}{\numberline {4}Code Samples}{17}
+\contentsline {section}{\numberline {4.1}Opening a serial port descriptor}{17}
+\contentsline {subsection}{\numberline {4.1.1}Windows}{17}
+\contentsline {subsection}{\numberline {4.1.2}Linux}{18}
+\contentsline {section}{\numberline {4.2}Typical applications}{19}
+\contentsline {subsection}{\numberline {4.2.1}Initialize Servo and PololuMaestro objects}{19}
+\contentsline {subsection}{\numberline {4.2.2}Moving the servos: blocking and non-blocking}{19}

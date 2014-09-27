@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Windows Desktop
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UDG_PololuMaestro", "ServoControl\ServoControl.vcxproj", "{0ED84FB6-E6CF-4835-85EF-20202FF029FA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Application", "Application\Application.vcxproj", "{21537003-075A-43AB-9026-762ECF5E7539}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0ED84FB6-E6CF-4835-85EF-20202FF029FA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0ED84FB6-E6CF-4835-85EF-20202FF029FA}.Debug|Win32.Build.0 = Debug|Win32
+		{0ED84FB6-E6CF-4835-85EF-20202FF029FA}.Debug|x64.ActiveCfg = Debug|x64
+		{0ED84FB6-E6CF-4835-85EF-20202FF029FA}.Debug|x64.Build.0 = Debug|x64
+		{0ED84FB6-E6CF-4835-85EF-20202FF029FA}.Release|Win32.ActiveCfg = Release|Win32
+		{0ED84FB6-E6CF-4835-85EF-20202FF029FA}.Release|Win32.Build.0 = Release|Win32
+		{0ED84FB6-E6CF-4835-85EF-20202FF029FA}.Release|x64.ActiveCfg = Release|x64
+		{0ED84FB6-E6CF-4835-85EF-20202FF029FA}.Release|x64.Build.0 = Release|x64
+		{21537003-075A-43AB-9026-762ECF5E7539}.Debug|Win32.ActiveCfg = Debug|Win32
+		{21537003-075A-43AB-9026-762ECF5E7539}.Debug|Win32.Build.0 = Debug|Win32
+		{21537003-075A-43AB-9026-762ECF5E7539}.Debug|x64.ActiveCfg = Debug|x64
+		{21537003-075A-43AB-9026-762ECF5E7539}.Debug|x64.Build.0 = Debug|x64
+		{21537003-075A-43AB-9026-762ECF5E7539}.Release|Win32.ActiveCfg = Release|Win32
+		{21537003-075A-43AB-9026-762ECF5E7539}.Release|Win32.Build.0 = Release|Win32
+		{21537003-075A-43AB-9026-762ECF5E7539}.Release|x64.ActiveCfg = Release|x64
+		{21537003-075A-43AB-9026-762ECF5E7539}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
