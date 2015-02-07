@@ -18,38 +18,42 @@
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{toc}{\contentsline {section}{\numberline {3.1}PololuMaestro class}{11}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}public members}{11}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1.1}PololuMaestro(HANDLE fd)}{11}}
-\newlabel{sec:constructor1}{{3.1.1.1}{11}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1.2}PololuMaestro(HANDLE fd,int nchannels)}{13}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1.3}\nobreakspace  {}PololuMaestro()}{13}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1.4} bool SetAngle(int channel, float angle)}{13}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1.5}float GetAngle(int channel)}{13}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1.6}bool SetTarget(int channel,unsigned short targetUs)}{13}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1.7}bool SetSpeed(int channel,unsigned short speed)}{14}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1.8}bool SetAcceleration(int channel,unsigned short acceleration)}{14}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1.9}unsigned short GetPosition(int channel)}{14}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1.10}bool AssignChannel(int channel, ServoMotor motor)}{14}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1.11}bool IsMoving()}{15}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}Private members}{15}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.2.1}HANDLE deviceDescriptor}{15}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.3} ServoMotor* channels}{15}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.3.1}int numberOfChannels}{15}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.3.2}bool WriteToDevice(unsigned char* buffer, int nBytes)}{15}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.3.3}bool ReadFromDevice(unsigned char* buffer, int nBytes)}{15}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}ServoMotor class}{15}}
-\newlabel{sec:ServoMotor}{{3.2}{15}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}int minPulse}{15}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}int maxPulse}{16}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}int neutralPulse}{16}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.4}int degreeRange}{16}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.5}int AngleToPulse(float angle)}{16}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.6}void SetParameters(int \_minPulse, int \_maxPulse, int \_neutralPulse, int \_degreeRange)}{16}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Code Samples}{17}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1.1}Error code definitions}{11}}
+\newlabel{sec:errorCodes}{{3.1.1.1}{11}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1.2}PololuMaestro(HANDLE fd)}{12}}
+\newlabel{sec:constructor1}{{3.1.1.2}{12}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1.3}PololuMaestro(HANDLE fd,int nchannels)}{14}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1.4}\nobreakspace  {}PololuMaestro()}{14}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1.5} bool SetAngle(int channel, float angle)}{14}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1.6}float GetAngle(int channel)}{15}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1.7}bool SetTarget(int channel,unsigned short targetUs)}{15}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1.8}bool SetSpeed(int channel,unsigned short speed)}{15}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1.9}bool SetAcceleration(int channel,unsigned short acceleration)}{15}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1.10}unsigned short GetPosition(int channel)}{16}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1.11}bool AssignChannel(int channel, ServoMotor motor)}{16}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1.12}bool IsMoving()}{16}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}short GetErrors()}{16}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.3}short GoHome()}{16}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.4}Private members}{16}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.4.1}HANDLE deviceDescriptor}{16}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.5} ServoMotor* channels}{17}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.5.1}int numberOfChannels}{17}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.5.2}bool WriteToDevice(unsigned char* buffer, int nBytes)}{17}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.5.3}bool ReadFromDevice(unsigned char* buffer, int nBytes)}{17}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}ServoMotor class}{17}}
+\newlabel{sec:ServoMotor}{{3.2}{17}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}int minPulse}{17}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}int maxPulse}{17}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}int neutralPulse}{17}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.4}int degreeRange}{17}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.5}int AngleToPulse(float angle)}{17}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.6}void SetParameters(int \_minPulse, int \_maxPulse, int \_neutralPulse, int \_degreeRange)}{18}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Code Samples}{19}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Opening a serial port descriptor}{17}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Windows}{17}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}Linux}{18}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Typical applications}{19}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Initialize Servo and PololuMaestro objects}{19}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Moving the servos: blocking and non-blocking}{19}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Opening a serial port descriptor}{19}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Windows}{19}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}Linux}{20}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Typical applications}{21}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Initialize Servo and PololuMaestro objects}{21}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Moving the servos: blocking and non-blocking}{21}}

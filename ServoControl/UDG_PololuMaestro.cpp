@@ -102,10 +102,10 @@ unsigned short PololuMaestro::GetPosition(int channel)
 	
 }
 
-/*Gets the position of 'channel'*/
+/*Returns true if any speed or acceleration limited channel has not reached its final position yet, returns false otherwise*/
 bool PololuMaestro::IsMoving()
 {
-	//[0x90, channel number]	
+	//[0x93]	
 	unsigned char serialCommand[] = {0x93};
 	if(! WriteToDevice(serialCommand,sizeof(serialCommand)))
 	{
@@ -141,4 +141,27 @@ bool PololuMaestro::ReadFromDevice(unsigned char* buffer, int nBytes)
 	{return false;}
 	return true;
 #endif
+}
+/*Gets the a two byte integer in which each bit corresponds to an error message*/
+short PololuMaestro::GetErrors()
+{
+	//[0xA1]	
+	unsigned char serialCommand[] = {0xA1};
+	if(! WriteToDevice(serialCommand,sizeof(serialCommand)))
+	{
+	}
+	unsigned char response[2];
+	if(!ReadFromDevice(response,2))
+	{
+	}
+	short error;
+	memcpy(&error,response,2);
+	return error;
+}
+/*Sets all servos and outputs to their home positions*/
+bool PololuMaestro::GoHome()
+{
+	//[0xA2]	
+	unsigned char serialCommand[] = {0xA2};
+	return WriteToDevice(serialCommand,sizeof(serialCommand));
 }

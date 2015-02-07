@@ -63,7 +63,34 @@ This guide uses Microsoft Visual Studio Express for Desktop 2012 and Windows 8.1
 Provides a software abstraction for the PololuMaestro board
 
 \subsection{public members}
+\subsubsection{Error code definitions}
+\label{sec:errorCodes}
+\textbf{ERROR\_MAESTRO\_SERIAL\_SIGNAL 0x0001}\\
+Serial Signal Error (bit 0): A hardware-level error that occurs when a byte’s stop bit is not detected at the expected place. This can occur if you are communicating at a baud rate that differs from the Maestro’s baud rate.\\
 
+\textbf{ERROR\_MAESTRO\_SERIAL\_OVERRUN 0x0002}\\
+Serial Overrun Error (bit 1): A hardware-level error that occurs when the UART’s internal buffer fills up. This should not occur during normal operation.\\
+
+\textbf{ERROR\_MAESTRO\_SERIAL\_RX\_BUFFER\_FULL 0x0004}\\
+Serial RX buffer full (bit 2): A firmware-level error that occurs when the firmware’s buffer for bytes received on the RX line is full and a byte from RX has been lost as a result. This error should not occur during normal operation.\\
+
+\textbf{ERROR\_MAESTRO\_SERIAL\_CRC\_ERROR 0x0008}\\
+Serial CRC error (bit 3): This error occurs when the Maestro is running in CRC-enabled mode and the cyclic redundancy check (CRC) byte at the end of the command packet does not match what the Maestro has computed as that packet’s CRC (Section 5.d). In such a case, the Maestro ignores the command packet and generates a CRC error.\\
+
+\textbf{ERROR\_MAESTRO\_SERIAL\_PROTOCOL 0x0010}\\
+Serial protocol error (bit 4): This error occurs when the Maestro receives an incorrectly formatted or nonsensical command packet. For example, if the command byte does not match a known command or an unfinished command packet is interrupted by another command packet, this error occurs.\\
+
+\textbf{ ERROR\_MAESTRO\_SERIAL\_TIMEOUT 0x0020}\\
+Serial timeout error (bit 5): When the serial timeout is enabled, this error occurs whenever the timeout period has elapsed without the Maestro receiving any valid serial commands. This timeout error can be used to make the servos return to their home positions in the event that serial communication between the Maestro and its controller is disrupted.\\
+
+\textbf{ ERROR\_MAESTRO\_SCRIPT\_STACK 0x0040}\\
+Script stack error (bit 6): This error occurs when a bug in the user script has caused the stack to overflow or underflow. Any script command that modifies the stack has the potential to cause this error. The stack depth is 32 on the Micro Maestro and 126 on the Mini Maestros.\\
+
+\textbf{ ERROR\_MAESTRO\_SCRIPT\_CALL\_STACK 0x0080}\\
+Script call stack error (bit 7): This error occurs when a bug in the user script has caused the call stack to overflow or underflow. An overflow can occur if there are too many levels of nested subroutines, or a subroutine calls itself too many times. The call stack depth is 10 on the Micro Maestro and 126 on the Mini Maestros. An underflow can occur when there is a return without a corresponding subroutine call. An underflow will occur if you run a subroutine using the “Restart Script at Subroutine” serial command and the subroutine terminates with a return command rather than a quit command or an infinite loop.\\
+
+\textbf{ ERROR\_MAESTRO\_SCRIPT\_PROGRAM\_COUNTER 0x0100}
+Script program counter error (bit 8): This error occurs when a bug in the user script has caused the program counter (the address of the next instruction to be executed) to go out of bounds. This can happen if your program is not terminated by a quit, return, or infinite loop.
 \subsubsection{PololuMaestro(HANDLE fd)}
 \label{sec:constructor1}
 This constructor method initializes the PololuMaestro using the provided Serial Port descriptor. By default, the number of channels is set to 18 (assumes Pololu Maestro 18 board). For a different number of channels, use PololuMaestro(HANDLE, int).
@@ -184,6 +211,13 @@ Assigns the ServoMotor instance \textit{motor} to channel \textit{channel}. The 
 Indicates if there is at least one channel that hasn't reached its target position. This command works properly only with speed or acceleration constrained channels. \\\\
 \textbf{Return value: } true if there is at least one channel that hasn't reached it target pulse, false if  it doesn't.
 
+\subsection{short GetErrors()}
+Sets a short (2 bytes) integer in which each bit corresponds to a particular error detectable by the Maestro. See \ref{sec:errorCodes} for the specific codes and their description.\\
+\textbf{Return value: } A short integer containing the error the applicable codes.
+
+
+\subsection{short GoHome()}
+Sets al outputs to their default home values.
 \subsection{Private members}
 
 \subsubsection{HANDLE deviceDescriptor}
@@ -223,6 +257,9 @@ Sets values for the servo's parameters.\\
 \textbf{int \_maxPulse} The value of maxPulse.\\
 \textbf{int \_neutralPulse} The value of neutralPulse.\\
 \textbf{int \_degreeRange} The value of degreeRange.
+
+
+
 
 \chapter{Code Samples}
 The code samples work for the Microsoft c++ compiler (cl, using Visual Studio Express 2012 for desktop) and g++ 3.8. Other compilers might work as well but haven't been tested yet. Windows examples assume an unicode build. \\
